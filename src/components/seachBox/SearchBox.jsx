@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import css from "./SeachBox.module.css";
-import { changeTextFilter, selectTextFilter } from "../../redux/filters/slice";
+import { changeFilter, selectNameFilter } from "../../redux/filters/slice";
 
 export function SearchBox() {
-  const value = useSelector(selectTextFilter);
+  const value = useSelector(selectNameFilter);
   const dispatch = useDispatch();
 
   return (
@@ -13,7 +13,7 @@ export function SearchBox() {
         className={css.searchBar}
         type="text"
         value={value}
-        onChange={(e) => dispatch(changeTextFilter(e.target.value))}
+        onChange={(e) => dispatch(changeFilter(e.target.value))}
         autoComplete="off"
       />
     </div>

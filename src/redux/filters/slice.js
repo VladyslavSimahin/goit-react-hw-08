@@ -6,12 +6,12 @@ const filtersSlice = createSlice({
     name: "",
   },
   reducers: {
-    changeTextFilter(state, action) {
+    changeFilter(state, action) {
       state.name = action.payload;
     },
   },
 });
 
-export const { changeTextFilter } = filtersSlice.actions;
+export const { changeFilter } = filtersSlice.actions;
 export default filtersSlice.reducer;
-export const selectTextFilter = (state) => state.filters.name;
+export const selectNameFilter = (state) => state.filters.name;
